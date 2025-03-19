@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para ti ❤</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+            background-color: #000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .background-video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+            opacity: 0.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+            margin: 20px;
+            position: relative;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 30px;
+            text-shadow: 0 0 10px rgba(255, 105, 180, 0.8);
+            animation: pulse 2s infinite;
+        }
+        
+        p {
+            font-size: 1.5rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+        }
+        
+        .mensaje-final {
+            font-size: 1.8rem;
+            margin-top: 40px;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(255, 105, 180, 0.8);
+            animation: pulse 2s infinite alternate;
+        }
+        
+        .btn {
+            opacity: 0.5;
+            width: 20px;
+            height: 20px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border: none;
+            border-radius: 50%;
+            margin: 20px auto;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            opacity: 0.8;
+            transform: scale(1.2);
+        }
+        
+        .emoji {
+            position: absolute;
+            font-size: 2rem;
+            pointer-events: none;
+            user-select: none;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <video autoplay muted loop class="background-video">
+        <source src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.1.0/shared/aurora-hd.mp4" type="video/mp4">
+    </video>
+    
+    <div class="container">
+        <h1>Para ti ❤</h1>
+        
+        <p>Te dije que te iba a soprender jsjsjs asi que hice dossssssssssssss 
+        mira esto lo estoy haciendo luego de ver tu video de tiktok y ayyyyyyyyyyy 
+        ❤❤ enserio me gustas y si quiero estar contigo jsjs 🥺 pero paso a paso a menos que el tarao de mi yo del futuro 
+        y te lo diga de una jsjsjs toy loquito</p>
+        
+        <button class="btn" onclick="window.location.href='https://drive.google.com/file/d/1PhmW3GCFpJxOEP8uwEfEUnb-F7-43CoW/view?usp=sharing'">.</button>
+        
+        <p class="mensaje-final">Cada día que pasa, solo pienso en lo afortunado que sería de caminar junto a ti, 
+        bajo auroras boreales o simplemente bajo las estrellas... 
+        contigo cualquier lugar es mágico ✨💫</p>
+    </div>
+    
+    <script>
+        // Crear emojis animados
+        const emojis = ['❤️', '✨', '🌟', '💫', '💖', '💕', '🥰', '😍', '💘', '💝'];
+        const container = document.body;
+        
+        for (let i = 0; i < 20; i++) {
+            createEmoji();
+        }
+        
+        function createEmoji() {
+            const emoji = document.createElement('div');
+            emoji.className = 'emoji';
+            emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+            
+            // Posición aleatoria
+            emoji.style.left = Math.random() * 100 + 'vw';
+            emoji.style.top = Math.random() * 100 + 'vh';
+            
+            // Animación con delay aleatorio
+            emoji.style.animationDelay = Math.random() * 5 + 's';
+            emoji.style.animationDuration = 5 + Math.random() * 10 + 's';
+            
+            container.appendChild(emoji);
+            
+            // Movimiento aleatorio
+            setInterval(() => {
+                emoji.style.left = Math.random() * 100 + 'vw';
+                emoji.style.top = Math.random() * 100 + 'vh';
+            }, 10000);
+        }
+        
+        // Agregar emojis al texto
+        const texto = document.querySelector('p');
+        texto.innerHTML = texto.innerHTML.replace(/\s+/g, ' ✨ ');
+    </script>
+</body>
+</html>
